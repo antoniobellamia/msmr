@@ -33,7 +33,7 @@ CREATE TABLE `corriere` (
   `password` char(32) NOT NULL,
   `tipo` enum('admin','dipendente') NOT NULL,
   `telefono` varchar(15) DEFAULT NULL,
-  `Copertura` enum('Nord-ovest','Nord-est','Centro','Sud','Isole','Completa') NOT NULL
+  `copertura` enum('Nord-ovest','Nord-est','Centro','Sud','Isole','Completa') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
