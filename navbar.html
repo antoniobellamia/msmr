@@ -85,26 +85,15 @@
         </div>
 
         <div class="pure-u-1-2 menu">
-            <a href="#" onclick="openmenu()"><i class="fa-solid fa-bars"></i></a>
+            <a href="#" onclick="openmenu()"><i class="fa-solid fa-bars" id="menuIcon"></i></a>
         </div>
 
         <div class="pure-u-md-3-5" id="menu-elem">
             <div class="pure-menu pure-menu-horizontal navBtns" id="menuUno">
                 <ul class="pure-menu-list">
 
-                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                        <a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
-                        <ul class="pure-menu-children">
-                            <li class="pure-menu-item">
-                                <a href="#" class="pure-menu-link">Email</a>
-                            </li>
-                            <li class="pure-menu-item">
-                                <a href="#" class="pure-menu-link">Twitter</a>
-                            </li>
-                            <li class="pure-menu-item">
-                                <a href="#" class="pure-menu-link">Tumblr Blog</a>
-                            </li>
-                        </ul>
+                    <li class="pure-menu-item ">
+                        <a href="#" class="pure-menu-link">Sports</a>
                     </li>
 
                     <li class="pure-menu-item ">
@@ -115,34 +104,12 @@
                         <a href="#" class="pure-menu-link">Ciao</a>
                     </li>
 
-                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
-                        <a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
-                        <ul class="pure-menu-children">
-                            <li class="pure-menu-item">
-                                <a href="#" class="pure-menu-link">Email</a>
-                            </li>
-                            <li class="pure-menu-item">
-                                <a href="#" class="pure-menu-link">Twitter</a>
-                            </li>
-                            <li class="pure-menu-item">
-                                <a href="#" class="pure-menu-link">Tumblr Blog</a>
-                            </li>
-                        </ul>
+                    <li class="pure-menu-item ">
+                        <a href="#" class="pure-menu-link">Sports</a>
                     </li>
 
-                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
-                        <a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
-                        <ul class="pure-menu-children">
-                            <li class="pure-menu-item">
-                                <a href="#" class="pure-menu-link">Email</a>
-                            </li>
-                            <li class="pure-menu-item">
-                                <a href="#" class="pure-menu-link">Twitter</a>
-                            </li>
-                            <li class="pure-menu-item">
-                                <a href="#" class="pure-menu-link">Tumblr Blog</a>
-                            </li>
-                        </ul>
+                    <li class="pure-menu-item ">
+                        <a href="#" class="pure-menu-link">Sports</a>
                     </li>
                 </ul>
 
@@ -214,11 +181,15 @@
             clickedOnce = !clickedOnce;
 
             if (!clickedOnce) {
+                document.getElementById("menuIcon").classList.add("fa-bars");
+                document.getElementById("menuIcon").classList.remove("fa-x");
                 document.getElementById("menu-elem").style.visibility = "hidden";
                 document.getElementById("menu-elem").style.display = "none";
                 document.getElementById("menu-elem2").style.visibility = "hidden";
                 document.getElementById("menu-elem2").style.display = "none";
             } else {
+                document.getElementById("menuIcon").classList.remove("fa-bars");
+                document.getElementById("menuIcon").classList.add("fa-x");
                 document.getElementById("menu-elem").style.visibility = "visible";
                 document.getElementById("menu-elem").style.display = "initial";
                 document.getElementById("menu-elem2").style.visibility = "visible";
