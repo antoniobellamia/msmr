@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar Responsive</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
-    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
     <style>
         nav {
             border-bottom: 1px solid black;
@@ -15,36 +19,77 @@
             color: black;
             align-items: center;
             align-content: center;
-            font-size:x-large;
+            font-size: x-large;
         }
 
-        .logo{
+        .logo {
             height: 10lvh;
             scale: 2;
         }
 
-        .navBtns{
+        .navBtns {
             width: 100%;
             text-align: center;
         }
 
-        .login{
+        .login {
             text-align: end;
-            
+
         }
 
+        .menu {
+            visibility: hidden;
+            display: none;
+            text-align: end;
+        }
+
+        .menu a {
+            color: initial;
+        }
+
+        #menu-elem,
+        #menu-elem2 {
+            visibility: visible;
+            display: initial;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                visibility: visible;
+                display: inline;
+            }
+
+            #menu-elem,
+            #menu-elem2 {
+                visibility: hidden;
+                display: none;
+                width: 100%;
+                display: inline-block;
+            }
+
+            .login {
+                text-align: center;
+            }
+
+
+
+        }
     </style>
 </head>
 
 <body>
     <nav class="pure-g">
 
-        <div class="pure-u-1-5">
+        <div class="pure-u-md-1-5 pure-u-1-2">
             <img src="res/simple-logo.png" class="logo">
         </div>
 
-        <div class="pure-u-3-5">
-            <div class="pure-menu pure-menu-horizontal navBtns">
+        <div class="pure-u-1-2 menu">
+            <a href="#" onclick="openmenu()"><i class="fa-solid fa-bars"></i></a>
+        </div>
+
+        <div class="pure-u-md-3-5" id="menu-elem">
+            <div class="pure-menu pure-menu-horizontal navBtns" id="menuUno">
                 <ul class="pure-menu-list">
 
                     <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
@@ -62,15 +107,15 @@
                         </ul>
                     </li>
 
-                    <li class="pure-menu-item">
+                    <li class="pure-menu-item ">
                         <a href="#" class="pure-menu-link">Sports</a>
                     </li>
 
-                    <li class="pure-menu-item">
-                        <a href="#" class="pure-menu-link login">Ciao</a>
+                    <li class="pure-menu-item ">
+                        <a href="#" class="pure-menu-link">Ciao</a>
                     </li>
 
-                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
                         <a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
                         <ul class="pure-menu-children">
                             <li class="pure-menu-item">
@@ -85,7 +130,7 @@
                         </ul>
                     </li>
 
-                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
                         <a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
                         <ul class="pure-menu-children">
                             <li class="pure-menu-item">
@@ -104,29 +149,83 @@
 
             </div>
 
-            
-            
+
+
         </div>
 
-        <div class="pure-u-1-5">
-            <div class="login pure-menu pure-menu-horizontal login">
-                
+        <div class="pure-u-md-1-5" id="menu-elem2">
+            <div class="login pure-menu pure-menu-horizontal login" id="menuDue">
+
                 <ul class="pure-menu-list">
                     <li class="pure-menu-item">
-                        <a href="#" class="pure-menu-link ">Log-In 
+                        <a href="#" class="pure-menu-link ">Log-In
                             <i class="fa-solid fa-right-to-bracket"></i>
                         </a>
-                        
+
                     </li>
                 </ul>
 
             </div>
+        </div>
         </div>
 
     </nav>
 
     <script>
-     
+
+
+        var mediaQuery = window.matchMedia("(max-width: 768px)");
+        var div1 = document.getElementById("menuUno");
+        var div2 = document.getElementById("menuDue");
+        let clickedOnce = false;
+
+
+        function handleMediaQueryChange(e) {
+            clickedOnce = false;
+
+            if (e.matches) {
+                // Se la larghezza dello schermo è 600px o meno, cambia il colore
+                div1.classList.remove("pure-menu-horizontal");
+                div2.classList.remove("pure-menu-horizontal");
+                document.getElementById("menu-elem").style.visibility = "hidden";
+                document.getElementById("menu-elem").style.display = "none";
+                document.getElementById("menu-elem2").style.visibility = "hidden";
+                document.getElementById("menu-elem2").style.display = "none";
+                
+            } else {
+                div1.classList.add("pure-menu-horizontal");
+                div2.classList.add("pure-menu-horizontal");
+                document.getElementById("menu-elem").style.visibility = "visible";
+                document.getElementById("menu-elem").style.display = "initial";
+                document.getElementById("menu-elem2").style.visibility = "visible";
+                document.getElementById("menu-elem2").style.display = "initial";
+                
+            }
+        }
+
+        mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+        // Esegui la funzione inizialmente
+        handleMediaQueryChange(mediaQuery);
+
+        
+
+        function openmenu() {
+            clickedOnce = !clickedOnce;
+
+            if (!clickedOnce) {
+                document.getElementById("menu-elem").style.visibility = "hidden";
+                document.getElementById("menu-elem").style.display = "none";
+                document.getElementById("menu-elem2").style.visibility = "hidden";
+                document.getElementById("menu-elem2").style.display = "none";
+            } else {
+                document.getElementById("menu-elem").style.visibility = "visible";
+                document.getElementById("menu-elem").style.display = "initial";
+                document.getElementById("menu-elem2").style.visibility = "visible";
+                document.getElementById("menu-elem2").style.display = "initial";
+
+            }
+        }
     </script>
 </body>
 
