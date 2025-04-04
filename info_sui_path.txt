@@ -1,0 +1,5 @@
+INCLUDE 
+<?php include $_SERVER['DOCUMENT_ROOT']. '/msmr/PATH' ?>
+
+LINK, SRC. HREF ECC
+    src="<?= '//'.$_SERVER['SERVER_NAME']?>/msmrPATH"

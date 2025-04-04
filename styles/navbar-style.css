@@ -1,0 +1,81 @@
+nav {
+    padding: 10px;
+    height: 10lvh;
+    color: black;
+    align-items: center;
+    align-content: center;
+    font-size: x-large;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+
+.menu-color{
+    color: var(--primary-color) !important;
+}
+
+.logo {
+    height: 10lvh;
+    scale: 2;
+}
+
+.navBtns {
+    width: 100%;
+    text-align: center;
+}
+
+.login {
+    text-align: end;
+
+}
+
+.menu {
+    visibility: hidden;
+    display: none;
+    text-align: end;
+}
+
+.menu a {
+    color: initial;
+}
+
+#menu-elem,
+#menu-elem2 {
+    visibility: visible;
+    display: initial;
+}
+
+#menu-elem, #menu-elem2{
+    font-size: 1.7dvw;
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        visibility: visible;
+        display: inline;
+    }
+
+    #menu-elem,
+    #menu-elem2 {
+        visibility: hidden;
+        display: none;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .login {
+        text-align: center;
+    }
+
+    #logoId {
+        width: 50%;
+    }
+
+    nav {
+        height: fit-content;
+    }
+
+    #menu-elem, #menu-elem2{
+        font-size: inherit;
+    }
+
+}
