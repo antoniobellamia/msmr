@@ -6,7 +6,7 @@
     <nav class="pure-g">
 
         <div class="pure-u-md-1-5 pure-u-1-2" id="logoId">
-            <img src="<?= '//'.$_SERVER['SERVER_NAME']?>/msmr/res/simple-logo.png" class="logo">
+            <a href="<?= '//'.$_SERVER['SERVER_NAME']?>/msmr"><img src="<?= '//'.$_SERVER['SERVER_NAME']?>/msmr/res/simple-logo.png" class="logo"></a>
         </div>
 
         <div class="pure-u-md-1-2 pure-u-1-2 menu">
