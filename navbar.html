@@ -53,6 +53,10 @@
             display: initial;
         }
 
+        #menu-elem, #menu-elem2{
+            font-size: 1.7dvw;
+        }
+
         @media screen and (max-width: 768px) {
             .menu {
                 visibility: visible;
@@ -71,20 +75,31 @@
                 text-align: center;
             }
 
+            #logoId {
+                width: 50%;
+            }
 
+            nav {
+                height: fit-content;
+            }
+
+            #menu-elem, #menu-elem2{
+                font-size: inherit;
+            }
 
         }
+
     </style>
 </head>
 
 <body>
     <nav class="pure-g">
 
-        <div class="pure-u-md-1-5 pure-u-1-2">
+        <div class="pure-u-md-1-5 pure-u-1-2" id="logoId">
             <img src="res/simple-logo.png" class="logo">
         </div>
 
-        <div class="pure-u-1-2 menu">
+        <div class="pure-u-md-1-2 pure-u-1-2 menu">
             <a href="#" onclick="openmenu()"><i class="fa-solid fa-bars" id="menuIcon"></i></a>
         </div>
 
@@ -151,51 +166,51 @@
             clickedOnce = false;
 
             if (e.matches) {
-                // Se la larghezza dello schermo è 600px o meno, cambia il colore
+
                 div1.classList.remove("pure-menu-horizontal");
                 div2.classList.remove("pure-menu-horizontal");
-                document.getElementById("menu-elem").style.visibility = "hidden";
-                document.getElementById("menu-elem").style.display = "none";
-                document.getElementById("menu-elem2").style.visibility = "hidden";
-                document.getElementById("menu-elem2").style.display = "none";
-                
+                menuOff();
+
             } else {
                 div1.classList.add("pure-menu-horizontal");
                 div2.classList.add("pure-menu-horizontal");
-                document.getElementById("menu-elem").style.visibility = "visible";
-                document.getElementById("menu-elem").style.display = "initial";
-                document.getElementById("menu-elem2").style.visibility = "visible";
-                document.getElementById("menu-elem2").style.display = "initial";
-                
+                menuOn();
+
             }
         }
 
         mediaQuery.addEventListener('change', handleMediaQueryChange);
 
-        // Esegui la funzione inizialmente
         handleMediaQueryChange(mediaQuery);
 
-        
+
 
         function openmenu() {
             clickedOnce = !clickedOnce;
 
             if (!clickedOnce) {
-                document.getElementById("menuIcon").classList.add("fa-bars");
-                document.getElementById("menuIcon").classList.remove("fa-x");
-                document.getElementById("menu-elem").style.visibility = "hidden";
-                document.getElementById("menu-elem").style.display = "none";
-                document.getElementById("menu-elem2").style.visibility = "hidden";
-                document.getElementById("menu-elem2").style.display = "none";
+                menuOff();
             } else {
-                document.getElementById("menuIcon").classList.remove("fa-bars");
-                document.getElementById("menuIcon").classList.add("fa-x");
-                document.getElementById("menu-elem").style.visibility = "visible";
-                document.getElementById("menu-elem").style.display = "initial";
-                document.getElementById("menu-elem2").style.visibility = "visible";
-                document.getElementById("menu-elem2").style.display = "initial";
-
+                menuOn();
             }
+        }
+
+        function menuOff() {
+            document.getElementById("menuIcon").classList.add("fa-bars");
+            document.getElementById("menuIcon").classList.remove("fa-x");
+            document.getElementById("menu-elem").style.visibility = "hidden";
+            document.getElementById("menu-elem").style.display = "none";
+            document.getElementById("menu-elem2").style.visibility = "hidden";
+            document.getElementById("menu-elem2").style.display = "none";
+        }
+
+        function menuOn() {
+            document.getElementById("menuIcon").classList.remove("fa-bars");
+            document.getElementById("menuIcon").classList.add("fa-x");
+            document.getElementById("menu-elem").style.visibility = "visible";
+            document.getElementById("menu-elem").style.display = "initial";
+            document.getElementById("menu-elem2").style.visibility = "visible";
+            document.getElementById("menu-elem2").style.display = "initial";
         }
     </script>
 </body>
