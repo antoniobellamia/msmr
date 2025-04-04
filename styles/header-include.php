@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <link rel="stylesheet" href="<?= '//'.$_SERVER['SERVER_NAME'].'/msmr/styles/navbar-style.css' ?>">
     <link rel="stylesheet" href="<?= '//'.$_SERVER['SERVER_NAME'].'/msmr/styles/font.css' ?>">
     <link rel="stylesheet" href="<?= '//'.$_SERVER['SERVER_NAME'].'/msmr/styles/general.css' ?>">
+    
