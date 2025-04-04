@@ -16,7 +16,7 @@
 
 
   <div class="pure-g login-card" style="justify-content: center">
-    <div class="w3-card-4 pure-u-1-2">
+    <div class="w3-card-4 pure-u-md-1-2 pure-u-1-1">
 
       <header class="w3-container" style="text-align: center;">
         <h1>Sign-In</h1>

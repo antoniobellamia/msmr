@@ -1,14 +1,19 @@
-:root{
+:root {
     --primary-color: rgb(0, 48, 143);
+    --footer-color: rgb(52, 52, 52);
 }
 
-body{
+html, body{
+    height: 100%;
+}
+
+body {
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
 }
 
-a:link{
+a:link {
     color: var(--primary-color);
 }
 
@@ -16,30 +21,45 @@ a:visited {
     color: var(--primary-color);
 }
 
-.login-card{
+.login-card {
     margin: 1.5rem;
 }
 
 
 .custom-fieldset {
-    display: flex;           
-    flex-direction: column;  
-    align-items: center;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-  }
-  
-  .control-group-custom {
-    width: 100%;        
-    text-align: center; 
-  }
-  
+}
 
-.pure-controls-custom{
+.control-group-custom {
+    width: 100%;
+    text-align: center;
+}
+
+
+.pure-controls-custom {
     margin-left: 0;
     margin-top: 1rem;
 }
 
-div.custom-signin{
+div.custom-signin {
     margin-bottom: 2rem;
 }
 
+
+#footerOG {
+    width: 100%;
+    text-align: center;
+    margin-top: 3rem;
+    background-color: var(--footer-color);
+    color: white;
+    padding-top: 1.5rem;
+}
+
+#footerOG img {
+    filter: invert(1);
+    max-width: 90%;
+
+}
