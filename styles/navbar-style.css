@@ -13,6 +13,12 @@ nav {
     color: var(--primary-color) !important;
 }
 
+.menu-color:hover{
+    background-color: inherit;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+
 .logo {
     height: 10lvh;
     scale: 2;

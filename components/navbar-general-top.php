@@ -22,15 +22,15 @@
                     </li>
 
                     <li class="pure-menu-item ">
-                        <a href="#" class="pure-menu-link menu-color">Invia un pacco</a>
+                        <a href="#" class="pure-menu-link menu-color">Spedire</a>
+                    </li>
+
+                    <li class="pure-menu-item">
+                        <a href="#" class="pure-menu-link menu-color">Tracking</a>
                     </li>
 
                     <li class="pure-menu-item ">
-                        <a href="#" class="pure-menu-link menu-color">Traccia una spedizione</a>
-                    </li>
-
-                    <li class="pure-menu-item ">
-                        <a href="#" class="pure-menu-link menu-color">Listino Prezzi</a>
+                        <a href="#" class="pure-menu-link menu-color">Tariffe</a>
                     </li>
 
                     <li class="pure-menu-item ">
