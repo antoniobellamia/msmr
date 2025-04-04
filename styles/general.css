@@ -1,3 +1,45 @@
 :root{
     --primary-color: rgb(0, 48, 143);
 }
+
+body{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+a:link{
+    color: var(--primary-color);
+}
+
+a:visited {
+    color: var(--primary-color);
+}
+
+.login-card{
+    margin: 1.5rem;
+}
+
+
+.custom-fieldset {
+    display: flex;           
+    flex-direction: column;  
+    align-items: center;    
+    justify-content: center;
+  }
+  
+  .control-group-custom {
+    width: 100%;        
+    text-align: center; 
+  }
+  
+
+.pure-controls-custom{
+    margin-left: 0;
+    margin-top: 1rem;
+}
+
+div.custom-signin{
+    margin-bottom: 2rem;
+}
+
