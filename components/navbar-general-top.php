@@ -18,23 +18,23 @@
                 <ul class="pure-menu-list">
 
                     <li class="pure-menu-item ">
-                        <a href="#" class="menu-color pure-menu-link ">Sports</a>
+                        <a href="#" class="menu-color pure-menu-link ">Chi siamo</a>
                     </li>
 
                     <li class="pure-menu-item ">
-                        <a href="#" class="pure-menu-link menu-color">Sports</a>
+                        <a href="#" class="pure-menu-link menu-color">Invia un pacco</a>
                     </li>
 
                     <li class="pure-menu-item ">
-                        <a href="#" class="pure-menu-link menu-color">Ciao</a>
+                        <a href="#" class="pure-menu-link menu-color">Traccia una spedizione</a>
                     </li>
 
                     <li class="pure-menu-item ">
-                        <a href="#" class="pure-menu-link menu-color">Sports</a>
+                        <a href="#" class="pure-menu-link menu-color">Listino Prezzi</a>
                     </li>
 
                     <li class="pure-menu-item ">
-                        <a href="#" class="pure-menu-link menu-color">Sports</a>
+                        <a href="#" class="pure-menu-link menu-color">Assistenza</a>
                     </li>
                 </ul>
 
