@@ -10,10 +10,11 @@ nav {
 }
 
 .menu-color{
+    background-color: inherit;
     color: var(--primary-color) !important;
 }
 
-.menu-color:hover{
+.menu-color:hover, .menu-color:focus {
     background-color: inherit;
     text-decoration: underline;
     text-decoration-style: wavy;
