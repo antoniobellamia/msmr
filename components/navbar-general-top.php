@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="it">
 
-<head>
     <?php include_once $_SERVER['DOCUMENT_ROOT']. '/msmr/styles/header-include.php' ?>
 </head>
 

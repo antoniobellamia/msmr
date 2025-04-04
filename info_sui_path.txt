@@ -1,5 +1,7 @@
 INCLUDE 
 <?php include $_SERVER['DOCUMENT_ROOT']. '/msmr/PATH' ?>
 
+<?php include_once $_SERVER['DOCUMENT_ROOT']. '/msmr/components/navbar-out.php' ?>
+
 LINK, SRC. HREF ECC
     src="<?= '//'.$_SERVER['SERVER_NAME']?>/msmrPATH"
