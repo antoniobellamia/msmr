@@ -5,6 +5,6 @@
         <?php include_once $_SERVER['DOCUMENT_ROOT']. '/msmr/components/navbar-out.php' ?>
     <!--BODY-->
 
-    <h1>Ciao</h1>
+    <h1 class="align-center">HOMEPAGE</h1>
 
     <?php include_once $_SERVER['DOCUMENT_ROOT']. '/msmr/components/footer.php' ?>
