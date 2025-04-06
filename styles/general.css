@@ -13,6 +13,10 @@ body {
     white-space: normal;
 }
 
+.align-center{
+    text-align: center;
+}
+
 a:link {
     color: var(--primary-color);
 }
