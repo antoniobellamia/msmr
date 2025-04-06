@@ -8,7 +8,7 @@
     $msHost = "127.0.0.1";  # Indirizzo "localhost"
     $msUser = "root";       # L'utente del DBMS
     $msPass = "";           # La password dell'utente del DBMS
-    $msName = "indirizzi"; # Il nome del database da selezionare
+    $msName = "msmr"; # Il nome del database da selezionare
     
     
     // Effettuo la connessione al DB

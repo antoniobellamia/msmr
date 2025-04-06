@@ -1,5 +1,6 @@
 <?php
 
+include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/database.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/errors/anti-injection.php';
 
 $username = antiInjection($_POST['username']);
@@ -9,16 +10,21 @@ $nome = antiInjection($_POST['nome']);
 $cognome = antiInjection($_POST['cognome']);
 
 
-/*
+
+
+
 if ($msConn) {
-    $sql = "INSERT INTO `utente` (`id`, `username`, `password`, `telefono`, `cognome`, `nome`, `tipo`, `cod_istat`, `cap`, `indirizzo`) VALUES (NULL, '$username', '$password', '$tel', '$nome', '$cognome', NULL, NULL, NULL, NULL)";
-    echo $sql;
+    $querySql = "INSERT INTO `utente` (`id`, `username`, `password`, `telefono`, `cognome`, `nome`, `tipo`, `cod_istat`, `cap`, `indirizzo`) VALUES (NULL, '$username', '$password', '$tel', '$nome', '$cognome', 'cliente', NULL, NULL, NULL)";
+    $queryRes = mysqli_query($msConn, $querySql);
+
+    //if(!$queryRes) {echo "Errore: " . mysqli_error($msConn); die();}
+    
 }
 
 
-if (true) {
-    $sql = "SELECT `id` FROM `utente` WHERE `username` = '$username' AND  `password` = '$password'";
-    echo $sql;
+if ($msConn) {
+    $querySql = "SELECT `id` FROM `utente` WHERE `username` = '$username' AND  `password` = '$password'";
+    
     $queryRes = mysqli_query($msConn, $querySql);
 
 
@@ -31,10 +37,11 @@ if (true) {
             session_start();
 
             // Memorizzo i dati nelle variabili di sessione.
-            $_SESSION["userId"] = $row["id"];
+            
 
-            // Ridireziono l'utente verso questa pagina.
-            header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/indirizzo.php");
+            session_start();
+            $_SESSION["userId"] = $row["id"];
+            header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/indirizzo-sign.php");
         } else {
             header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/signin.php?err=1");
         }
@@ -42,11 +49,8 @@ if (true) {
         echo "Errore nella query: " . mysqli_error($dbConn);
     }
 }
-*/
+
+mysqli_close($geoConn);
+mysqli_close($msConn);
 
 
-/*********************TEST */
-
-session_start();
-$_SESSION["userId"] = $username;
-header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/indirizzo-sign.php");
