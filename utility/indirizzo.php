@@ -1,27 +1,4 @@
-<?php 
-
-session_start();
-
-if (empty($_SESSION["userId"])) {
-    header('Location: //' . $_SERVER['SERVER_NAME'] . '/msmr/errors/403.php');
-    die();
-}
-else {
-
-    $userId = $_SESSION["userId"];
-}
-
-?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>First Access</title>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/navbar-out.php' ?>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/database.php' ?>
-
-    <!--BODY-->
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/database.php' ?>
 
     <div class="geo-container">
         <div id="geo-raccolta">
@@ -197,7 +174,7 @@ else {
                 <input type="hidden" name="provincia" <?php if (isset($_POST["provincia"])) echo "value=\"" . $_POST["provincia"] . "\""; ?> required>
                 <input type="hidden" name="comune" <?php if (isset($_POST["comune"])) echo "value=\"" . $_POST["comune"] . "\""; ?> required>
                 <input type="hidden" name="cap" <?php if (isset($_POST["cap"])) echo "value=\"" . $_POST["cap"] . "\""; ?> required>
-                <input type="submit" class="pure-button pure-button-custom-1 pure-form-custom-1" id="salvabtn" value="Salva Dati" formaction="" formtarget="_self">
+                <input type="submit" class="pure-button pure-button-custom-1 pure-form-custom-1" id="salvabtn" value="Salva Dati" formaction="" formtarget="_self" <?php if (!isset($_POST["cap"])) echo "disabled"; ?>>
                 <input type="submit" class="pure-button pure-button-custom-1 pure-form-custom-1" id="inviabtn" value="Invia Dati" <?php if (!$verifyIndirizzo) echo "disabled"; ?>>
 
             </form>
@@ -327,6 +304,3 @@ else {
 
         geo_raccolta.style.height = geo_mappaHeight;
     </script>
-
-
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/footer.php' ?>

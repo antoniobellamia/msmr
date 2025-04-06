@@ -2,4 +2,14 @@
 
 session_start();
 
-echo "Welcome, ".$_SESSION['userId']."<br><br>";
+/*UPDATE TABLE*/
+
+
+
+
+
+
+if(isset($_SESSION["firstAccess"]) && $_SESSION["firstAccess"] = true){
+     session_destroy();
+     header("Location: //".$_SERVER['SERVER_NAME']."/msmr");
+}

@@ -49,4 +49,4 @@ if (true) {
 
 session_start();
 $_SESSION["userId"] = $username;
-header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/indirizzo.php");
+header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/indirizzo-sign.php");
