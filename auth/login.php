@@ -25,7 +25,8 @@
       <div class="w3-container">
 
 
-        <form class="pure-form pure-form-aligned" method="get" action="">
+        <form class="pure-form pure-form-aligned" method="post" action="login-action.php">
+
           <fieldset class="custom-fieldset">
             <div class="pure-control-group control-group-custom">
               <label for="aligned-name">Username</label>

@@ -19,7 +19,7 @@ if ($msConn) {
     try{
         $queryRes = mysqli_query($msConn, $querySql);
     }catch(Exception $exc){
-        header("Location: ".$_SERVER['NAME'] . "/msmr/auth/signin.php?err=1");
+        header("Location: //".$_SERVER['SERVER_NAME'] . "/msmr/auth/signin.php?err=1");
     }
     
 }
