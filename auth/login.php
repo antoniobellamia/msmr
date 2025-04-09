@@ -6,12 +6,21 @@
   <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/navbar-out.php' ?>
   <!--BODY-->
 
-  <?php if (isset($_GET['err']) && $_GET['err'] == 1)
-    echo
-    "<div class=\"w3-panel w3-red w3-display-container w3-center\">
-      <span onclick=\"this.parentElement.style.display='none'\" class=\"w3-button w3-large w3-display-topright\">×</span>
-      <h3>Errore! Username o password errati!</h3>
-    </div>";
+  <?php 
+  if (isset($_GET['err'])){
+    if ($_GET['err'] == 1)
+      echo
+      "<div class=\"w3-panel w3-red w3-display-container w3-center\">
+        <span onclick=\"this.parentElement.style.display='none'\" class=\"w3-button w3-large w3-display-topright\">×</span>
+        <h3>Errore! Username o password errati!</h3>
+      </div>";
+    else if ($_GET['err'] == 2)
+      echo
+      "<div class=\"w3-panel w3-green w3-display-container w3-center\">
+        <span onclick=\"this.parentElement.style.display='none'\" class=\"w3-button w3-large w3-display-topright\">×</span>
+        <h3>Registrazione avvenuta con successo!</h3>
+      </div>";
+ }
   ?>
 
 

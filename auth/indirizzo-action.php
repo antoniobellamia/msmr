@@ -28,7 +28,7 @@ try{
 
     if (isset($_SESSION["firstAccess"]) && $_SESSION["firstAccess"] = true) {
         session_destroy();
-        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/success.php");
+        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/login.php?err=2");
     }
 
 }catch(Exception $exc){
