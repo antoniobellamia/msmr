@@ -10,19 +10,23 @@
     $msPass = "";           # La password dell'utente del DBMS
     $msName = "msmr"; # Il nome del database da selezionare
     
-    
+    try{
     // Effettuo la connessione al DB
-    $geoConn = mysqli_connect(
-        $geoHost,
-        $geoUser,
-        $geoPass,
-        $geoName
-    );
-    
-    $msConn = mysqli_connect(
-        $msHost,
-        $msUser,
-        $msPass,
-        $msName
-    );
+        $geoConn = mysqli_connect(
+            $geoHost,
+            $geoUser,
+            $geoPass,
+            $geoName
+        );
+
+        $msConn = mysqli_connect(
+            $msHost,
+            $msUser,
+            $msPass,
+            $msName
+        );
+
+    }catch(Exception $exc){
+        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/errors/500.php");
+    }
 ?>

@@ -13,37 +13,30 @@ $indirizzo = antiInjection($_POST['tipoVia'] . " " . $_POST['indirizzo']);
 /*UPDATE TABLE*/
 echo $userId;
 
-if ($geoConn) {
+try{
+
     $query = "SELECT P.codice_istat AS istat FROM gi_cap P JOIN gi_comuni C ON P.codice_istat = C.codice_istat WHERE C.denominazione_ita = '$citta' AND P.cap = '$cap'";
     $result = mysqli_query($geoConn, $query);
 
     $row = mysqli_fetch_assoc($result)['istat'];
 
-    if ($msConn) {
-        $istat = $row;
+    $istat = $row;
 
-        $query = "UPDATE utente SET cod_istat = '$istat', cap = '$cap', indirizzo = '$indirizzo' WHERE id = '$userId'";
-        $result = mysqli_query($msConn, $query);
+    $query = "UPDATE utente SET cod_istat = '$istat', cap = '$cap', indirizzo = '$indirizzo' WHERE id = '$userId'";
+    $result = mysqli_query($msConn, $query);
 
-        if(!$result){
-            if (isset($_SESSION["firstAccess"]) && $_SESSION["firstAccess"] = true) session_destroy();
-            header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/errors/500.php");
-        }
 
-    } else {
-        if (isset($_SESSION["firstAccess"]) && $_SESSION["firstAccess"] = true) session_destroy();
-        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/errors/500.php");
+    if (isset($_SESSION["firstAccess"]) && $_SESSION["firstAccess"] = true) {
+        session_destroy();
+        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/success.php");
     }
-} else {
+
+}catch(Exception $exc){
     if (isset($_SESSION["firstAccess"]) && $_SESSION["firstAccess"] = true) session_destroy();
     header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/errors/500.php");
 }
 
 
-if (isset($_SESSION["firstAccess"]) && $_SESSION["firstAccess"] = true) {
-    session_destroy();
-    //header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/success.php");
-}
 
 mysqli_close($geoConn);
 mysqli_close($msConn);

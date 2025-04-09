@@ -15,9 +15,12 @@ $cognome = antiInjection($_POST['cognome']);
 
 if ($msConn) {
     $querySql = "INSERT INTO `utente` (`id`, `username`, `password`, `telefono`, `cognome`, `nome`, `tipo`, `cod_istat`, `cap`, `indirizzo`) VALUES (NULL, '$username', '$password', '$tel', '$nome', '$cognome', 'cliente', NULL, NULL, NULL)";
-    $queryRes = mysqli_query($msConn, $querySql);
-
-    //if(!$queryRes) {echo "Errore: " . mysqli_error($msConn); die();}
+    
+    try{
+        $queryRes = mysqli_query($msConn, $querySql);
+    }catch(Exception $exc){
+        header("Location: ".$_SERVER['NAME'] . "/msmr/auth/signin.php?err=1");
+    }
     
 }
 
