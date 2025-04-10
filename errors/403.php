@@ -1,9 +1,11 @@
+<?php include_once $_SERVER['DOCUMENT_ROOT']. '/msmr/components/session-con.php' ?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>HOMEPAGE</title>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/navbar-out.php' ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/navbar.php' ?>
     <!--BODY-->
 
     <div class="align-center">

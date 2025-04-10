@@ -18,7 +18,7 @@ if (empty($_SESSION["userId"])) {
 
 <head>
     <title>First Access</title>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/navbar-out.php' ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/navbar.php' ?>
 
     <div class="align-center">
         <h1>Inserisci il tuo indirizzo di spedizione.</h1>

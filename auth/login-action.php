@@ -23,6 +23,7 @@ if ( $cat == 0 ) {
         $res = mysqli_fetch_assoc($queryRes); // Non fetch_row
         $tipo = $res['tipo'];
         $id = $res['id'];
+        $username = $res['username'];
 
     }catch(Exception $exc){
         $cat = -1;
@@ -41,6 +42,7 @@ if ( $cat == 0 ) {
         $res = mysqli_fetch_assoc($queryRes); // Non fetch_row
         $tipo = $res['tipo'];
         $id = $res['id'];
+        $username = $res['username'];
 
     }catch(Exception $exc){
         $cat = -1;
