@@ -9,4 +9,10 @@
 
     <h1 class="align-center">HOMEPAGE</h1>
 
+    <form >
+
+    <input type="search" placeholder="Cerca un ID spedizione..."></input>
+
+</form>
+
     <?php include_once $_SERVER['DOCUMENT_ROOT']. '/msmr/components/footer.php' ?>
