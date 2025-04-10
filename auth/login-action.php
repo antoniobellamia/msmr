@@ -25,7 +25,9 @@ if ( $cat == 0 ) {
         $id = $res['id'];
 
     }catch(Exception $exc){
+        $cat = -1;
         header("Location: //".$_SERVER['SERVER_NAME'] . "/msmr/auth/login.php?err=1");
+        die();
     }
     
 }else{
@@ -41,7 +43,9 @@ if ( $cat == 0 ) {
         $id = $res['id'];
 
     }catch(Exception $exc){
+        $cat = -1;
         header("Location: //".$_SERVER['SERVER_NAME'] . "/msmr/auth/login.php?err=1");
+        die();
     }
 }
 
