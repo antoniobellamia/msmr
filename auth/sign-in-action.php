@@ -18,6 +18,9 @@ if ($msConn) {
     
     try{
         $queryRes = mysqli_query($msConn, $querySql);
+
+        if(!$queryRes) header("Location: //".$_SERVER['SERVER_NAME'] . "/msmr/auth/signin.php?err=1");
+        
     }catch(Exception $exc){
         header("Location: //".$_SERVER['SERVER_NAME'] . "/msmr/auth/signin.php?err=1");
     }
@@ -33,23 +36,19 @@ if ($msConn) {
 
     if ($queryRes) {
         if (mysqli_num_rows($queryRes) === 1) {
-            // Prendo il recordo dal DB
+
             $row = mysqli_fetch_assoc($queryRes);
-
-            // Creo la sessione
-            session_start();
-
-            // Memorizzo i dati nelle variabili di sessione.
             
 
             session_start();
-            $_SESSION["userId"] = $row["id"];
+
+            $_SESSION["id"] = $row["id"];
             header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/indirizzo-sign.php");
         } else {
             header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/signin.php?err=1");
         }
     } else {
-        echo "Errore nella query: " . mysqli_error($dbConn);
+        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/signin.php?err=1");
     }
 }
 

@@ -2,7 +2,7 @@
 
 <?php include_once $_SERVER['DOCUMENT_ROOT']. '/msmr/components/navbar-general-top.php' ?>
 
-<a href="#" class="pure-menu-link menu-color ">
+<a href="<?= '//'.$_SERVER['SERVER_NAME']?>/msmr/auth/settings.php" class="pure-menu-link menu-color ">
     <?php 
         if(isset($_SESSION["username"])) 
             echo $_SESSION["username"];

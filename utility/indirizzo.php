@@ -147,7 +147,7 @@
             <input type="button" class="pure-button pure-button-custom-1" onclick="cancella(4)" value="Cancella selezione">
         </form>
 
-        <form id="indForm" class="pure-form pure-form-custom-1" method="post" action="indirizzo-action.php" target="">
+        <form id="indForm" class="pure-form pure-form-custom-1" method="post" action="<?= "//".$_SERVER['SERVER_NAME']?>/msmr/auth/indirizzo-action.php" target="">
 
             <input list="tipoVia" id="tipoViaInpt" name="tipoVia" size="6" autocomplete="off" onkeydown="return false;" placeholder="-tipo-" required
                 <?php if (isset($_POST["tipoVia"])) echo "value=\"" . $_POST["tipoVia"] . "\"";

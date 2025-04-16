@@ -5,13 +5,12 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/errors/anti-injection.php';
 
 session_start();
 
-$userId = $_SESSION['userId'];
+$userId = $_SESSION['id'];
 $citta = $_POST['comune'];
 $cap = $_POST['cap'];
 $indirizzo = antiInjection($_POST['tipoVia'] . " " . $_POST['indirizzo']);
 
 /*UPDATE TABLE*/
-echo $userId;
 
 try{
 
@@ -29,6 +28,8 @@ try{
     if (isset($_SESSION["firstAccess"]) && $_SESSION["firstAccess"] = true) {
         session_destroy();
         header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/login.php?err=2");
+    }else {
+        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/settings.php?optn=3");
     }
 
 }catch(Exception $exc){
