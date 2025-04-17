@@ -54,16 +54,27 @@ if (empty($_SESSION["id"])){
                   <h3><i class="fa-solid fa-shield-halved"></i> Sicurezza</h3>
                 </a>
               </li>
-              <li class="pure-menu-item">
-                <a href="<?= '//'.$_SERVER['SERVER_NAME']?>/msmr/auth/indirizzo-update.php" class="pure-menu-link">
-                  <h3><i class="fa-solid fa-location-dot"></i> Modifica Ind. Spedizione</h3>
+
+              <?php if (isset($_SESSION["tipo"]) && $_SESSION["tipo"] < 2) 
+
+                echo "<li class=\"pure-menu-item\">
+                <a href=\"" . '//' . $_SERVER['SERVER_NAME'] . "/msmr/auth/indirizzo-update.php\" class=\"pure-menu-link\">
+                  <h3><i class=\"fa-solid fa-location-dot\"></i> Modifica Ind. Spedizione</h3>
                 </a>
-              </li>
-              <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link">
-                  <h3><i class="fa-solid fa-ticket"></i> Abbonamenti</h3>
+                </li>
+                <li class=\"pure-menu-item\">
+                <a href=\"#\" class=\"pure-menu-link\">
+                  <h3><i class=\"fa-solid fa-ticket\"></i> Abbonamenti</h3>
                 </a>
-              </li>
+                </li>";
+
+                else echo "<li class=\"pure-menu-item\">
+                <a href=\"" . '//' . $_SERVER['SERVER_NAME'] . "/msmr/auth/settings.php?optn=3\" class=\"pure-menu-link\">
+                  <h3><i class=\"fa-solid fa-location-dot\"></i> Modifica zona di copertura</h3>
+                </a>
+              </li>";
+              
+              ?>
 
               <li class="pure-menu-item">
                 <a href="<?= '//'.$_SERVER['SERVER_NAME']?>/msmr/auth/logout.php" class="pure-menu-link">
