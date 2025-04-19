@@ -22,6 +22,7 @@ if(isset($_SESSION['tipo']) && !isset($_GET['s']))
     <!--BODY-->
 
     <h1 class="align-center">HOMEPAGE</h1>
+    
 <section>
     <?php if (isset($_GET['err']))
 
