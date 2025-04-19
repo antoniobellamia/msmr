@@ -14,7 +14,7 @@ $cognome = antiInjection($_POST['cognome']);
 
 
 if ($msConn) {
-    $querySql = "INSERT INTO `utente` (`id`, `username`, `password`, `telefono`, `cognome`, `nome`, `tipo`, `cod_istat`, `cap`, `indirizzo`) VALUES (NULL, '$username', '$password', '$tel', '$nome', '$cognome', 'cliente', NULL, NULL, NULL)";
+    $querySql = "INSERT INTO `utente` (`id`, `username`, `password`, `telefono`, `cognome`, `nome`, `tipo`, `cod_istat`, `cap`, `indirizzo`) VALUES (NULL, '$username', '$password', '$tel', '$cognome', '$nome', 'cliente', NULL, NULL, NULL)";
     
     try{
         $queryRes = mysqli_query($msConn, $querySql);
