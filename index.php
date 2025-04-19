@@ -22,7 +22,7 @@ if(isset($_SESSION['tipo']) && !isset($_GET['s']))
     <!--BODY-->
 
     <h1 class="align-center">HOMEPAGE</h1>
-    
+
 <section>
     <?php if (isset($_GET['err']))
 
@@ -39,7 +39,7 @@ if(isset($_SESSION['tipo']) && !isset($_GET['s']))
           
           <div class="pure-control-group control-group-custom">
             <label for="idOrdine">ID Spedizione</label>
-            <input id="idOrdine" type="text" name="idOrdine" placeholder="Cerca un ID spedizione..." required>
+            <input id="idOrdine" type="number" name="idOrdine" placeholder="Cerca un ID spedizione..." required>
           </div>
       
           <div class="pure-controls-custom">

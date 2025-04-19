@@ -13,7 +13,7 @@ if ($msConn) {
         SELECT 
             O.id,
             O.titolo,
-            U.username AS mittente,
+            U.username AS destinatario,
             O.data_prevista,
             S.stato,
             S.data
@@ -27,8 +27,8 @@ if ($msConn) {
             )
         ) AS S
         JOIN ordine O ON S.id_ordine = O.id
-        JOIN utente U ON O.id_utente_mitt = U.id
-        WHERE O.id_utente_dest = " . $_SESSION["id"] . "
+        JOIN utente U ON O.id_utente_dest = U.id
+        WHERE O.id_utente_mitt = " . $_SESSION["id"] . "
         ORDER BY S.data DESC;
     ";
 
@@ -38,7 +38,7 @@ if ($msConn) {
         $queryRes = mysqli_query($msConn, $querySql);
 
         if (!$queryRes || mysqli_num_rows($queryRes) == 0) {
-            $content = "<tbody><tr><th>Nessun ordine in arrivo.</th></tr></tbody>";
+            $content = "<tbody><tr><th>Nessun ordine spedito.</th></tr></tbody>";
         } else {
 
             $content = '<tbody>';
@@ -49,7 +49,7 @@ if ($msConn) {
                 $content .= '<tr style="cursor:pointer" onclick="window.location.href=\'' . $link . '\'">';
                 $content .= '<td>' . htmlspecialchars($row["id"]) . '</td>';
                 $content .= '<td>' . htmlspecialchars($row["titolo"]) . '</td>';
-                $content .= '<td>' . htmlspecialchars($row["mittente"]) . '</td>';
+                $content .= '<td>' . htmlspecialchars($row["destinatario"]) . '</td>';
                 $content .= '<td>' . htmlspecialchars($row["stato"]) . '</td>';
                 $content .= '<td>' . htmlspecialchars($row["data"]) . '</td>';
                 $content .= '<td>' . htmlspecialchars($row["data_prevista"]) . '</td>';
@@ -63,6 +63,7 @@ if ($msConn) {
     } catch (Exception $exc) {
         $content = "<tbody><tr><th>Errore nella connessione al DB.</th></tr></tbody>";
         //echo $exc->getMessage();
+        
     }
 }
 
@@ -108,7 +109,7 @@ if ($msConn) {
         <div class="pure-u-1-1 pure-u-md-19-24 w3-card-2">
             <div class="dashboard">
                 <header class="w3-container" style="text-align: center;">
-                    <h2> <i class="fa-solid fa-truck-fast"></i> Ordini In Arrivo</h2>
+                    <h2> <i class="fa-solid fa-truck-ramp-box"></i> Ordini Spediti</h2>
                 </header>
 
 
@@ -117,7 +118,7 @@ if ($msConn) {
                         <tr>
                             <th>ID</th>
                             <th>Titolo</th>
-                            <th>Mittente</th>
+                            <th>Destinatario</th>
                             <th>Stato</th>
                             <th>Ultimo Aggiornamento</th>
                             <th>Consegna Prevista</th>
@@ -145,6 +146,4 @@ if ($msConn) {
 
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/footer.php';
     
-    mysqli_close($msConn);
-    
-    ?>
+    mysqli_close($msConn); ?>
