@@ -109,7 +109,7 @@ if ($msConn) {
                     $nomeComune = $comuneRow["denominazione_ita"];
                     $siglaProvincia = $comuneRow["sigla_provincia"];
 
-                    $content .= '<tr>'. $secondIcon.'<td>' . htmlspecialchars($nomeComune) . '(' . htmlspecialchars($siglaProvincia) . ')</td></tr>';
+                    $content .= '<tr>'. $secondIcon.'<td>' . htmlspecialchars($nomeComune) . ' (' . htmlspecialchars($siglaProvincia) . ')</td></tr>';
                     
 
 

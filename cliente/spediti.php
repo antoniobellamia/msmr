@@ -131,8 +131,15 @@ if ($msConn) {
                 </table>
 
 
+                
+
+
 
             </div>
+
+            <footer class="w3-container align-center">
+                <h2 class="spedisci-btn"><i class="fa-solid fa-circle-plus"></i> Nuova Spedizione</h2>
+            </footer>
         </div>
 
 

@@ -151,3 +151,8 @@ iframe.geo-iframe{
     height: 100%;
     width: 100%;
 }
+
+.spedisci-btn{
+    color: var(--primary-color);
+    text-align: right;
+}
