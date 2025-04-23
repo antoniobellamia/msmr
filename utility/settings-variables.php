@@ -122,7 +122,7 @@ if(!isset($_GET["optn"])){
                     <label for=\"copertura\">Zona di copertura:</label>
                     <select name=\"copertura\" id=\"zona\" class=\"pure-input-1-2\" required>";
 
-            $options = ['Nord-ovest', 'Nord-est', 'Centro', 'Sud', 'Isole', 'Completa'];
+            $options = ['Nord-ovest', 'Nord-est', 'Centro', 'Sud', 'Isole', 'Assoluta'];
 
             foreach ($options as $option) {
                 $selected = ($option == $copertura) ? "selected" : "";

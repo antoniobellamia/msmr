@@ -1,7 +1,13 @@
 <?php
 
+include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/session-con.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/database.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/errors/anti-injection.php';
+
+if (empty($_SESSION["id"]) || ($_SESSION['tipo'] != 0 && $_SESSION['tipo'] != 1)) {
+    header('Location: //' . $_SERVER['SERVER_NAME'] . '/msmr/errors/403.php');
+    die();
+}
 
 session_start();
 
@@ -9,7 +15,6 @@ $id_mitt = $_SESSION['id'];
 $id_dest = antiInjection($_POST['id_dest']);
 $titolo = antiInjection($_POST['titolo']);
 $descrizione = antiInjection($_POST['descrizione']);
-$istr_consegna = antiInjection($_POST['istr_consegna']);
 
 
 try{
@@ -37,7 +42,7 @@ $sql_ordine = "
         id_utente_mitt, id_utente_dest, id_corriere
     )
     SELECT 
-        '$titolo', '$descrizione', '$istr_consegna', CURDATE() + INTERVAL 7 DAY,
+        '$titolo', '$descrizione', NULL, CURDATE() + INTERVAL 7 DAY,
         $id_mitt, $id_dest, C.id
     FROM (
         SELECT C.id

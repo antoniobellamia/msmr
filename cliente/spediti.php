@@ -138,7 +138,7 @@ if ($msConn) {
             </div>
 
             <footer class="w3-container align-center">
-                <h2 class="spedisci-btn"><i class="fa-solid fa-circle-plus"></i> Nuova Spedizione</h2>
+                <a href="<?= '//' . $_SERVER['SERVER_NAME'] ?>/msmr/cliente/nuovo-ordine.php"><h2 class="spedisci-btn"><i class="fa-solid fa-circle-plus"></i> Nuova Spedizione</h2></a>
             </footer>
         </div>
 
