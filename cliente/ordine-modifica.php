@@ -64,7 +64,7 @@ if ($msConn) {
 <html>
 
 <head>
-    <title>DASHBOARD</title>
+    <title>INFO ORDINE</title>
 
     <style>
         table {
