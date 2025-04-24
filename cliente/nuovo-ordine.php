@@ -7,6 +7,33 @@ if (empty($_SESSION["id"]) || ($_SESSION['tipo'] != 0 && $_SESSION['tipo'] != 1)
     die();
 }
 
+if ($msConn) {
+  try {
+    // ID utente preso dalla sessione
+    $idUtente = $_SESSION['id'];
+
+    // Verifica se l'utente ha un abbonamento attivo e non scaduto
+    $querySql = "
+      SELECT 1
+      FROM abbonamento
+      WHERE id_utente = $idUtente AND scaduto = 0
+      LIMIT 1;
+    ";
+
+    $queryRes = mysqli_query($msConn, $querySql);
+
+    if (!$queryRes || mysqli_num_rows($queryRes) == 0) {
+      throw new Exception("Non hai un abbonamento attivo.");
+    }
+
+
+  } catch (Exception $exc) {
+    header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/abbonamenti");
+    die();
+  }
+}
+
+
 if($msConn){
 
 try{
