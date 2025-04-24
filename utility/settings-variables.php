@@ -271,7 +271,16 @@ if(!isset($_GET["optn"])){
                 $content = "<h2><i class=\"fa-solid fa-globe\"></i><br>INDIRIZZO DI SPEDIZIONE MODIFICATO!</h2>";
             }
 
-            include $_SERVER['DOCUMENT_ROOT'] . '/msmr/utility/trova-indirizzo.php';
+            include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/utility/trova-indirizzo.php';
+
+            $ind = getIndirizzo($msConn, $_SESSION['id']);
+
+            $indirizzo = $ind['indirizzo'];
+            $cap = $ind['cap'];
+            $comune = $ind['comune'];
+            $sigla_provincia = $ind['sigla_provincia'];
+            $regione = $ind['regione'];
+            $ripartizione = $ind['ripartizione'];
 
             $content .= "<h2><i class=\"fa-solid fa-map-pin\"></i>Indirizzo di spedizione attuale:<br>
             $indirizzo <br> $cap $comune ($sigla_provincia), $regione ($ripartizione)</h2>";

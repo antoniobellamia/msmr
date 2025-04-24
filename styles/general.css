@@ -156,3 +156,12 @@ iframe.geo-iframe{
     color: var(--primary-color);
     text-align: right;
 }
+
+/*CORRIER*/
+
+iframe.maps {
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
