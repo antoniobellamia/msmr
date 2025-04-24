@@ -264,7 +264,25 @@ if(!isset($_GET["optn"])){
 
 
         }else if($_GET["optn"] == 3){
-            $content = "<h1><i class=\"fa-solid fa-globe\"></i><br>INDIRIZZO DI SPEDIZIONE MODIFICATO!</h1>";
+
+            $content = "";
+
+            if(isset($_GET['m'])){
+                $content = "<h2><i class=\"fa-solid fa-globe\"></i><br>INDIRIZZO DI SPEDIZIONE MODIFICATO!</h2>";
+            }
+
+            include $_SERVER['DOCUMENT_ROOT'] . '/msmr/utility/trova-indirizzo.php';
+
+            $content .= "<h2><i class=\"fa-solid fa-map-pin\"></i>Indirizzo di spedizione attuale:<br>
+            $indirizzo <br> $cap $comune ($sigla_provincia), $regione ($ripartizione)</h2>";
+
+            $content .="<a href=\"" . '//' . $_SERVER['SERVER_NAME'] . "/msmr/auth/indirizzo-update.php\" class=\"pure-menu-link\">
+            <h3><i class=\"fa-solid fa-location-dot\"></i> Modifica Ind. Spedizione</h3>
+            </a>";
+
+
+
+            
         }
 
     }

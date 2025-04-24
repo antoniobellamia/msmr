@@ -1,4 +1,5 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT']. '/msmr/components/session-con.php';
+<?php include_once $_SERVER['DOCUMENT_ROOT']. '/msmr/components/session-con.php';+
+include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/database.php';
 
 if (empty($_SESSION["id"])){
   header('Location: //' . $_SERVER['SERVER_NAME'] . '/msmr/errors/403.php');
@@ -58,8 +59,8 @@ if (empty($_SESSION["id"])){
               <?php if (isset($_SESSION["tipo"]) && $_SESSION["tipo"] < 2) 
 
                 echo "<li class=\"pure-menu-item\">
-                <a href=\"" . '//' . $_SERVER['SERVER_NAME'] . "/msmr/auth/indirizzo-update.php\" class=\"pure-menu-link\">
-                  <h3><i class=\"fa-solid fa-location-dot\"></i> Modifica Ind. Spedizione</h3>
+                <a href=\"" . '//' . $_SERVER['SERVER_NAME'] . "/msmr/auth/settings.php?optn=3\" class=\"pure-menu-link\">
+                  <h3><i class=\"fa-solid fa-location-dot\"></i> Indirizzo di Spedizione</h3>
                 </a>
                 </li>
                 <li class=\"pure-menu-item\">

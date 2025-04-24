@@ -29,7 +29,7 @@ try{
         session_destroy();
         header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/login.php?err=2");
     }else {
-        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/settings.php?optn=3");
+        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/settings.php?optn=3&m=");
     }
 
 }catch(Exception $exc){
