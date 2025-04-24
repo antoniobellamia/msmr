@@ -212,7 +212,10 @@ if ($msConn) {
                         <th>È un reso?</th>
                         <td><?= ($isReso ? 'Sì' : 'No') ?></td>
                     </tr>
-                    <tr><td colspan="2" style="text-align: center;"><a href="ordine-modifica.php?idOrdine=<?=$idOrdine?>">Modifica</a><td><tr>
+                    <tr>
+                        <td style="text-align: end;"><a href="ordine-annulla.php?idOrdine=<?=$idOrdine?>">Annulla</a></td>
+                        <td style="text-align: start;"><a href="ordine-modifica.php?idOrdine=<?=$idOrdine?>">Modifica</a></td>
+                    <tr>
 
                 </table>
 
