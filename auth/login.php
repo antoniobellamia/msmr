@@ -22,6 +22,12 @@
         <span onclick=\"this.parentElement.style.display='none'\" class=\"w3-button w3-large w3-display-topright\">×</span>
         <h3>Registrazione avvenuta con successo!</h3>
       </div>";
+      else if ($_GET['err'] == 3)
+      echo
+      "<div class=\"w3-panel w3-orange w3-display-container w3-center\">
+        <span onclick=\"this.parentElement.style.display='none'\" class=\"w3-button w3-large w3-display-topright\">×</span>
+        <h3>Procedi prima con il login!</h3>
+      </div>";
  }
   ?>
 

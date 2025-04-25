@@ -64,7 +64,7 @@ if (empty($_SESSION["id"])){
                 </a>
                 </li>
                 <li class=\"pure-menu-item\">
-                <a href=\"#\" class=\"pure-menu-link\">
+                <a href=\"" . '//' . $_SERVER['SERVER_NAME'] . "/msmr/abbonamenti/\" class=\"pure-menu-link\" target=\"blank\">
                   <h3><i class=\"fa-solid fa-ticket\"></i> Abbonamenti</h3>
                 </a>
                 </li>";

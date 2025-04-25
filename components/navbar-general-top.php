@@ -30,7 +30,7 @@
                     </li>
 
                     <li class="pure-menu-item ">
-                        <a href="#" class="pure-menu-link menu-color">Tariffe</a>
+                        <a href="//<?= $_SERVER['SERVER_NAME'] ?>/msmr/abbonamenti/listino.php" class="pure-menu-link menu-color">Tariffe</a>
                     </li>
 
                     <li class="pure-menu-item ">
