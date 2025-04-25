@@ -73,7 +73,7 @@ if ($msConn) {
         <div class="pure-u-1-1 pure-u-md-19-24 w3-card-2">
             <div class="dashboard">
                 <header class="w3-container" style="text-align: center;">
-                    <h2><i class="fa-solid fa-people-group"></i> Gestione Corrieri</h2>
+                    <h2><i class="fa-solid fa-people-group"></i> Elenco Corrieri</h2>
                 </header>
 
                 <table class="pure-table pure-table-bordered" style="margin: 0 auto;">

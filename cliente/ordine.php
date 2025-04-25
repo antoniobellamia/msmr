@@ -23,7 +23,8 @@ if ($msConn) {
             JOIN utente mitt ON o.id_utente_mitt = mitt.id
             JOIN utente dest ON o.id_utente_dest = dest.id
             WHERE o.id = " . $_GET["idOrdine"] . "
-            AND (o.id_utente_mitt = " . $_SESSION["id"] . " OR o.id_utente_dest = " . $_SESSION["id"] . ")
+            AND (o.id_utente_mitt = " . $_SESSION["id"] . " OR o.id_utente_dest = " . $_SESSION["id"] . " 
+            OR ".$_SESSION['tipo']." = 1 )
         ;";
 
         $queryRes = mysqli_query($msConn, $querySql);
