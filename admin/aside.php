@@ -20,7 +20,7 @@
                 </a>
             </li>
             <li class="pure-menu-item">
-                <a href="<?= '//' . $_SERVER['SERVER_NAME'] ?>/phpmyadmin/" class="pure-menu-link" target="_blank">
+                <a href="<?= '//' . $_SERVER['SERVER_NAME'] ?>/phpmyadmin/index.php?route=/database/structure&db=msmr" class="pure-menu-link" target="_blank">
                     <h3><i class="fa-solid fa-database"></i> Accesso al Database</h3>
                 </a>
             </li>
