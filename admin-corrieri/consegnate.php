@@ -8,24 +8,25 @@ if (empty($_SESSION["id"]) || ($_SESSION['tipo'] != 2 && $_SESSION['tipo'] != 3)
     die();
 }
 
+
 if ($msConn) {
 
 
     $querySql = "SELECT 
-        O.id,
-        U.username AS mittente,
-        UD.username AS destinatario,
-        UD.id AS idDest,
-        O.data_prevista,
-        S.stato,
-        S.data,
-        C.username AS corriere_username,
-        C.copertura
+            O.id,
+            U.username AS mittente,
+            UD.username AS destinatario,
+            UD.id AS idDest,
+            O.data_prevista,
+            S.stato,
+            S.data,
+            C.username AS corriere_username,
+            C.copertura
         FROM ordine O
         JOIN utente U ON O.id_utente_mitt = U.id
         JOIN utente UD ON O.id_utente_dest = UD.id
         JOIN corriere C ON O.id_corriere = C.id
-        LEFT JOIN (
+        JOIN (
             SELECT S1.*
             FROM stato S1
             JOIN (
@@ -34,9 +35,8 @@ if ($msConn) {
                 GROUP BY id_ordine
             ) S2 ON S1.id_ordine = S2.id_ordine AND S1.data = S2.max_data
         ) AS S ON O.id = S.id_ordine
-        WHERE S.stato IS NULL OR S.stato <> 'Consegnato'
-        ORDER BY O.data_prevista ASC, S.data ASC;
-
+        AND S.stato = 'Consegnato'
+        ORDER BY O.data_prevista DESC, S.data ASC;
         ";
 
 
@@ -64,6 +64,7 @@ if ($msConn) {
                 $content .= '<td>' . htmlspecialchars($row["stato"]) . '</td>';
                 $content .= '<td>' . htmlspecialchars($row["data"]) . '</td>';
                 $content .= '<td>' . htmlspecialchars($row["data_prevista"]) . '</td>';
+
                 $content .= '<td>' . htmlspecialchars($row["corriere_username"]) . 
                 ' ('.htmlspecialchars($row["copertura"]).')</td>';
                 $content .= '</tr>';
@@ -99,7 +100,7 @@ if ($msConn) {
         <div class="pure-u-1-1 pure-u-md-19-24 w3-card-2">
             <div class="dashboard">
                 <header class="w3-container" style="text-align: center;">
-                    <h2> <i class="fa-solid fa-dolly"></i> Tutte le spedizioni</h2>
+                    <h2> <i class="fa-solid fa-flag-checkered"></i> Tutte le spedizioni consegnate</h2>
                 </header>
 
 

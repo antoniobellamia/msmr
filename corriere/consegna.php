@@ -24,7 +24,7 @@ if ($msConn) {
             JOIN utente mitt ON o.id_utente_mitt = mitt.id
             JOIN utente dest ON o.id_utente_dest = dest.id
             WHERE o.id = " . $_GET["idOrdine"] . "
-            AND o.id_corriere = " . $_SESSION["id"] . " 
+            AND (o.id_corriere = " . $_SESSION["id"] . " OR " . $_SESSION['tipo'] . " = 3)
             
         ;";
 
