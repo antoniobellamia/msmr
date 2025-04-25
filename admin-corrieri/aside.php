@@ -15,6 +15,16 @@
                 </a>
             </li>
             <li class="pure-menu-item">
+                <a href="<?= '//' . $_SERVER['SERVER_NAME'] ?>/msmr/admin-corrieri/magazzini.php" class="pure-menu-link">
+                    <h3> <i class="fa-solid fa-warehouse"></i> Magazzini</h3>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a href="<?= '//' . $_SERVER['SERVER_NAME'] ?>/msmr/admin-corrieri/gestione-corrieri.php" class="pure-menu-link">
+                    <h3> <i class="fa-solid fa-people-group"></i> Gestione Corrieri</h3>
+                </a>
+            </li>
+            <li class="pure-menu-item">
                 <a href="<?= '//' . $_SERVER['SERVER_NAME'] ?>/msmr/corriere/" class="pure-menu-link">
                     <h3> <i class="fa-solid fa-street-view"></i> Vista corriere semplice</h3>
                 </a>

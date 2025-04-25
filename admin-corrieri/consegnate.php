@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/database.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/errors/anti-injection.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/utility/trova-indirizzo.php';
 
-if (empty($_SESSION["id"]) || ($_SESSION['tipo'] != 2 && $_SESSION['tipo'] != 3)) {
+if (empty($_SESSION["id"]) || $_SESSION['tipo'] != 3) {
     header('Location: //' . $_SERVER['SERVER_NAME'] . '/msmr/errors/403.php');
     die();
 }
