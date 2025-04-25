@@ -7,11 +7,6 @@ if(isset($_SESSION['tipo']) && !isset($_GET['s']))
         case 2: header("Location: //".$_SERVER['SERVER_NAME']."/msmr/corriere/");  break;
         case 3: header("Location: //".$_SERVER['SERVER_NAME']."/msmr/admin-corrieri/");  break;
     }
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +18,7 @@ if(isset($_SESSION['tipo']) && !isset($_GET['s']))
 
     <h1 class="align-center">HOMEPAGE</h1>
 
-<section>
+<section id="Tracking">
     <?php if (isset($_GET['err']))
 
     if($_GET['err'] == 1)

@@ -18,15 +18,15 @@
                 <ul class="pure-menu-list">
 
                     <li class="pure-menu-item ">
-                        <a href="#" class="menu-color pure-menu-link ">Chi siamo</a>
+                    <a href="<?= '//'.$_SERVER['SERVER_NAME']?>/msmr/?s=#ChiSiamo" class="menu-color pure-menu-link ">Chi siamo</a>
                     </li>
 
                     <li class="pure-menu-item ">
-                        <a href="#" class="pure-menu-link menu-color">Spedire</a>
+                    <a href="<?= '//'.$_SERVER['SERVER_NAME']?>/msmr/?s=#Spedire" class="pure-menu-link menu-color">Spedire</a>
                     </li>
 
                     <li class="pure-menu-item">
-                        <a href="#" class="pure-menu-link menu-color">Tracking</a>
+                    <a href="<?= '//'.$_SERVER['SERVER_NAME']?>/msmr/?s=#Tracking" class="pure-menu-link menu-color">Tracking</a>
                     </li>
 
                     <li class="pure-menu-item ">
