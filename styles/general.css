@@ -175,3 +175,37 @@ iframe.maps {
 .filler{
     height: 3rem;
 }
+
+/*home*/
+
+.slideDiv{
+    width: 100%;
+    
+}
+
+.homepage img{
+    filter: brightness(60%);
+    width: 100%;
+
+  height: auto;
+  object-fit: cover;
+}
+
+.homepage h1, .homepage p{
+    color:white;
+    font-size: clamp(24px, 5vw, 48px);
+
+}
+
+.pure-button-home{
+    margin-top: 1rem;
+}
+
+.fitSpedisci{
+    width: 70%;
+}
+
+#spedisci{
+    margin-top: 5px;
+    margin-bottom: -3rem;
+}

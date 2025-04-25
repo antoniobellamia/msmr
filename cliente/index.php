@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/database.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/errors/anti-injection.php';
 
 if (empty($_SESSION["id"]) || ($_SESSION['tipo'] != 0 && $_SESSION['tipo'] != 1)) {
-    header('Location: //' . $_SERVER['SERVER_NAME'] . '/msmr/errors/403.php');
+    header('Location: //' . $_SERVER['SERVER_NAME'] . '/msmr/auth/login.php?err=3');
     die();
 }
 
