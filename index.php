@@ -26,7 +26,7 @@ if (isset($_SESSION['tipo']) && !isset($_GET['s']))
   <!--BODY-->
 
   <main class="homepage">
-  <span id="ChiSiamo"></span>
+    <span id="ChiSiamo"></span>
     <section id="presentazione" class="w3-display-container slideDiv">
 
       <img src="<?= '//' . $_SERVER['SERVER_NAME'] ?>/msmr/res/frontImg.png">
@@ -91,6 +91,16 @@ if (isset($_SESSION['tipo']) && !isset($_GET['s']))
 
     <span id="Tracking"></span>
 
+    <?php if (isset($_GET['err']))
+
+      if ($_GET['err'] == 1)
+        echo
+        "<div class=\"w3-panel w3-red w3-display-container w3-center\">
+      <span onclick=\"this.parentElement.style.display='none'\" class=\"w3-button w3-large w3-display-topright\">×</span>
+    <h3>ID Spedizione inesistente!</h3>
+    </div>";
+    ?>
+
     <section class="w3-display-container slideDiv">
 
       <img class="slide w3-animate-opacity" src="<?= '//' . $_SERVER['SERVER_NAME'] ?>/msmr/res/image1.jpg">
@@ -98,18 +108,8 @@ if (isset($_SESSION['tipo']) && !isset($_GET['s']))
       <img class="slide w3-animate-opacity" src="<?= '//' . $_SERVER['SERVER_NAME'] ?>/msmr/res/image3.jpg">
       <img class="slide w3-animate-opacity" src="<?= '//' . $_SERVER['SERVER_NAME'] ?>/msmr/res/image4.jpg">
 
-
-
       <section class="w3-display-middle w3-container w3-padding-16">
-        <?php if (isset($_GET['err']))
 
-          if ($_GET['err'] == 1)
-            echo
-            "<div class=\"w3-panel w3-red w3-display-container w3-center\">
-                <span onclick=\"this.parentElement.style.display='none'\" class=\"w3-button w3-large w3-display-topright\">×</span>
-              <h3>Errore! ID Spedizione errato!</h3>
-              </div>";
-        ?>
 
         <form method="post" action="//<?= $_SERVER['SERVER_NAME'] ?>/msmr/no-user/" class="pure-form pure-form-aligned">
           <fieldset class="custom-fieldset">
@@ -129,12 +129,12 @@ if (isset($_SESSION['tipo']) && !isset($_GET['s']))
     <section id="spedisci" class="w3-display-container">
 
       <img src="<?= '//' . $_SERVER['SERVER_NAME'] ?>/msmr/res/mail.jpg">
-          <div class="w3-container w3-display-middle align-center fitSpedisci">
-            <h1>Spedisci un pacco</h1>
+      <div class="w3-container w3-display-middle align-center fitSpedisci">
+        <h1>Spedisci un pacco</h1>
 
-          <a href="//<?= $_SERVER['SERVER_NAME'] ?>/msmr/abbonamenti/listino.php" style="color: white;"><button class="pure-button pure-button-primary">Tariffe di spedizione</button></a>
-          <a href="//<?= $_SERVER['SERVER_NAME'] ?>/msmr/cliente/nuovo-ordine.php" style="color: white;"><button class="pure-button pure-button-primary">Spedisci adesso</button></a>
-          </div>
+        <a href="//<?= $_SERVER['SERVER_NAME'] ?>/msmr/abbonamenti/listino.php" style="color: white;"><button class="pure-button pure-button-primary">Tariffe di spedizione</button></a>
+        <a href="//<?= $_SERVER['SERVER_NAME'] ?>/msmr/cliente/nuovo-ordine.php" style="color: white;"><button class="pure-button pure-button-primary">Spedisci adesso</button></a>
+      </div>
 
 
     </section>
@@ -145,9 +145,9 @@ if (isset($_SESSION['tipo']) && !isset($_GET['s']))
     var slideIndices = {};
 
     carousel("slide");
-    
+
     carousel("textSlide");
-     
+
     function carousel(className) {
       var x = document.getElementsByClassName(className);
 

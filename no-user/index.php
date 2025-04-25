@@ -23,7 +23,7 @@ if ($msConn) {
         $data = $row["data"];
         $isReso = $row["isReso"];
     } catch (Exception $exc) {
-        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr?err=1&s=");
+        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr?err=1&s=#Tracking");
         die();
     }
 }
