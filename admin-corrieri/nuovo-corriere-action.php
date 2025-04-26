@@ -23,7 +23,6 @@ if ($msConn) {
 
         header('Location: //' . $_SERVER['SERVER_NAME'] . '/msmr/admin-corrieri/gestione-corrieri.php');
     } catch (Exception $exc) {
-        echo $exc->getMessage();
-        //header('Location: //' . $_SERVER['SERVER_NAME'] . '/msmr/admin-corrieri/gestione-corrieri.php?err=1&m='.$exc->getMessage());
+        header('Location: //' . $_SERVER['SERVER_NAME'] . '/msmr/admin-corrieri/gestione-corrieri.php?err=1&m='.$exc->getMessage());
     }
 }
