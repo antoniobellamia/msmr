@@ -26,10 +26,10 @@ if ($msConn) {
                 GROUP BY id_ordine
             )
         ) AS S
-        JOIN ordine O ON S.id_ordine = O.id
+        RIGHT JOIN ordine O ON S.id_ordine = O.id
         JOIN utente U ON O.id_utente_dest = U.id
         WHERE O.id_utente_mitt = " . $_SESSION["id"] . "
-        ORDER BY S.data DESC;
+        ORDER BY S.data DESC, O.data_prevista ASC, O.id DESC;
     ";
 
     
