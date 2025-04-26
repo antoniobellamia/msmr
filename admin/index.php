@@ -27,10 +27,10 @@ if ($msConn) {
                 GROUP BY id_ordine
             )
         ) AS S
-        JOIN ordine O ON S.id_ordine = O.id
+        RIGHT JOIN ordine O ON S.id_ordine = O.id
         JOIN utente U ON O.id_utente_mitt = U.id
         JOIN utente UD ON O.id_utente_dest = UD.id
-        ORDER BY S.data DESC;
+        ORDER BY S.data DESC, O.id DESC;
 
     ";
 
