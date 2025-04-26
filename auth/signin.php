@@ -43,7 +43,7 @@
               </div>
               <div class="pure-u-1 pure-u-md-1-3">
                 <label for="multi-email">Recapito Telefonico</label>
-                <input id="multi-email" class="pure-u-23-24" type="tel" placeholder="+039..." required name="tel"/>
+                <input id="multi-email" class="pure-u-23-24" type="tel" placeholder="+039..." name="tel"/>
               </div>
             </div>
 

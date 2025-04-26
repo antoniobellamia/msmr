@@ -237,7 +237,7 @@ if ($msConn) {
                                     <?php
                                     if ($stati && mysqli_num_rows($stati) > 0) {
                                         while ($row = mysqli_fetch_assoc($stati)) {
-                                            $stato = htmlspecialchars($row['nome_stato']);
+                                            $stato = $row['nome_stato'];
                                             echo "<option value=\"$stato\">$stato</option>";
                                         }
                                     } else {

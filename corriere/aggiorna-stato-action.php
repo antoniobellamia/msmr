@@ -20,7 +20,7 @@ if (
 }
 
 $idOrdine = antiInjection($_POST['idOrdine']);
-$stato = antiInjection($_POST['stato']);
+$stato = $_POST['stato'];
 $informazioni = antiInjection($_POST['informazioni']);
 $magazzino = antiInjection($_POST['magazzino']);
 $note = antiInjection($_POST['note']);
