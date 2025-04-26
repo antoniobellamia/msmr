@@ -1,6 +1,6 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/database.php' ?>
 
-<div class="geo-container">
+<div class="geo-container" style="overflow-x: auto; width: 100%;">
     <div id="geo-raccolta">
 
         <form id="regioneForm" class="pure-form pure-form-custom-1" method="post">

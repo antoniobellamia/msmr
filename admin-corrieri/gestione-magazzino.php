@@ -57,7 +57,7 @@ try {
         }
     }
 } catch (Exception $e) {
-    header('Location: //' . $_SERVER['SERVER_NAME'] . '/msmr/errors/403.php');
+    header('Location: //' . $_SERVER['SERVER_NAME'] . '/msmr/errors/500.php');
     die();
 }
 ?>
