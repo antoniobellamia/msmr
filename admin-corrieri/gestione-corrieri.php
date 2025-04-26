@@ -28,7 +28,7 @@ if ($msConn) {
                 WHERE stato = 'Consegnato'
             )
         GROUP BY C.id
-        ORDER BY ordini_attivi DESC
+        ORDER BY ordini_attivi DESC, C.id
     ";
 
     try {
@@ -38,7 +38,7 @@ if ($msConn) {
             $content = '<tbody>';
 
             while ($row = mysqli_fetch_assoc($queryRes)) {
-               
+
 
                 $content .= '<tr>';
                 $content .= '<td>' . htmlspecialchars($row["username"]) . '</td>';
@@ -48,8 +48,6 @@ if ($msConn) {
                 $content .= '<td>' . intval($row["ordini_attivi"]) . '</td>';
                 $content .= '</tr>';
             }
-
-            $content .= '</tbody>';
         }
     } catch (Exception $exc) {
         $content = "<tbody><tr><td colspan='6'>Errore durante la lettura dei dati.</td></tr></tbody>";
@@ -59,9 +57,11 @@ if ($msConn) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Gestione Corrieri</title>
 </head>
+
 <body>
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/navbar.php'; ?>
 
@@ -87,7 +87,48 @@ if ($msConn) {
                         </tr>
                     </thead>
                     <?= $content ?>
+                    
+                    <tr>
+                        <form method="post" action="nuovo-corriere-action.php">
+                            <td><input type="text" name="username" placeholder="username" required></td>
+                            <td></td>
+                            <td><select name="tipo">
+                                    <?php $options = ['dipendente', 'admin'];
+
+                                    foreach ($options as $option) {
+                                        $selected = ($option == $copertura) ? "selected" : "";
+                                        echo "<option value=\"$option\" $selected>$option</option>";
+                                    } ?>
+
+                                </select>
+
+                            </td>
+                            <td><select name="copertura">
+                                    <?php $options = ['Assoluta', 'Nord-ovest', 'Nord-est', 'Centro', 'Sud', 'Isole'];
+
+                                    foreach ($options as $option) {
+                                        $selected = ($option == $copertura) ? "selected" : "";
+                                        echo "<option value=\"$option\" $selected>$option</option>";
+                                    } ?>
+
+                                </select>
+
+                            </td>
+
+                            <td><input type="submit" value="Aggiungi"></td>
+                        </form>
+                    </tr>
                 </table>
+
+                <?php if (isset($_GET['err']))
+
+                    if ($_GET['err'] == 1)
+                        echo
+                        "<div class=\"w3-panel w3-red w3-display-container w3-center\">
+                          <span onclick=\"this.parentElement.style.display='none'\" class=\"w3-button w3-large w3-display-topright\">×</span>
+                        <h3>Inserimento nuovo corriere fallito!</h3>
+                        </div>";
+                ?>
             </div>
         </div>
     </section>
@@ -97,4 +138,5 @@ if ($msConn) {
     mysqli_close($msConn);
     ?>
 </body>
+
 </html>
