@@ -60,9 +60,7 @@ if ($msConn) {
 
 <head>
     <title>Gestione Corrieri</title>
-</head>
 
-<body>
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/navbar.php'; ?>
 
     <section class="pure-g section-dashboard">

@@ -49,7 +49,7 @@ if ($msConn) {
 <html>
 
 <head>
-    <title>INFO ORDINE</title>
+    <title>Abbonamenti</title>
 
     <style>
         table {

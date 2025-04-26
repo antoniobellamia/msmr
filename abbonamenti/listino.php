@@ -45,9 +45,7 @@ if ($msConn) {
     </style>
 
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/navbar.php' ?>
-</head>
 
-<body>
     <header class="w3-container" style="text-align: center;">
         <h2><i class="fa-solid fa-ticket"></i> Listino Abbonamenti</h2>
     </header>

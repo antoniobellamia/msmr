@@ -74,9 +74,6 @@ if ($msConn) {
 <head>
     <title>Gestione Utenti</title>
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/navbar.php'; ?>
-</head>
-
-<body>
 
     <section class="pure-g section-dashboard">
         <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/admin/aside.php'; ?>

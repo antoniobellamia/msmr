@@ -62,7 +62,7 @@ if ($msConn) {
         <div class="w3-card-4 pure-u-md-1-2 pure-u-1-1">
 
             <header class="w3-container" style="text-align: center;">
-                <h2>Informazioni Ordine Nro: <?= $id_ordine ?></h2>
+                <h2>Informazioni Ordine #<?= $id_ordine ?></h2>
             </header>
 
             <div class="w3-container">

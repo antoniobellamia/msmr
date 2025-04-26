@@ -32,7 +32,7 @@ LEFT JOIN (
     )
 ) AS OS ON OS.id_magaz = M.id
 GROUP BY M.id
-ORDER BY numero_ordini DESC;
+ORDER BY numero_ordini DESC, M.id;
     ";
 
     try {
