@@ -84,7 +84,7 @@ if ($msConn) {
             </div>
 
             <footer class="w3-container align-center">
-            <a href="//<?= $_SERVER['SERVER_NAME'] ?>/msmr/cliente/" style="color: black;"><p>Accedere per visualizzare i dettagli della spedizione.</p></a>
+            <a href="//<?= $_SERVER['SERVER_NAME'] ?>/msmr/cliente/ordine.php?idOrdine=<?= $id_ordine ?>" style="color: black;"><p>Accedere per visualizzare i dettagli della spedizione.</p></a>
             </footer>
 
 
