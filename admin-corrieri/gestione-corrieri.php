@@ -46,6 +46,7 @@ if ($msConn) {
                 $content .= '<td>' . htmlspecialchars($row["tipo"]) . '</td>';
                 $content .= '<td>' . htmlspecialchars($row["copertura"]) . '</td>';
                 $content .= '<td>' . intval($row["ordini_attivi"]) . '</td>';
+                $content .='<td><a href="//'.$_SERVER['SERVER_NAME'].'/msmr/admin-corrieri/elimina-corriere.php?idCorr='. urlencode($row["id"]).'"><i class="fa-solid fa-trash-can"></i></a></td>';
                 $content .= '</tr>';
             }
         }
@@ -82,6 +83,7 @@ if ($msConn) {
                             <th>Tipo</th>
                             <th>Copertura</th>
                             <th>Ordini a carico</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <?= $content ?>
@@ -102,7 +104,10 @@ if ($msConn) {
 
                             </td>
                             <td><select name="copertura">
-                                    <?php $options = ['Assoluta', 'Nord-ovest', 'Nord-est', 'Centro', 'Sud', 'Isole'];
+                                    <?php 
+                                    $copertura = '';
+
+                                    $options = ['Assoluta', 'Nord-ovest', 'Nord-est', 'Centro', 'Sud', 'Isole'];
 
                                     foreach ($options as $option) {
                                         $selected = ($option == $copertura) ? "selected" : "";
@@ -113,12 +118,12 @@ if ($msConn) {
 
                             </td>
 
-                            <td><input type="submit" value="Aggiungi"></td>
+                            <td colspan="2" class="align-center"><input type="submit" value="Aggiungi"></td>
                         </form>
                     </tr>
                 </table>
 
-                <?php if (isset($_GET['err']))
+                <?php if (isset($_GET['err'])){
 
                     if ($_GET['err'] == 1)
                         echo
@@ -126,6 +131,13 @@ if ($msConn) {
                           <span onclick=\"this.parentElement.style.display='none'\" class=\"w3-button w3-large w3-display-topright\">×</span>
                         <h3>Inserimento nuovo corriere fallito!</h3>
                         </div>";
+                    if ($_GET['err'] == 2)
+                        echo
+                        "<div class=\"w3-panel w3-red w3-display-container w3-center\">
+                          <span onclick=\"this.parentElement.style.display='none'\" class=\"w3-button w3-large w3-display-topright\">×</span>
+                        <h3>Eliminazione corriere fallita!</h3>
+                        </div>";
+                }
                 ?>
             </div>
         </div>
