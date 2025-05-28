@@ -63,7 +63,7 @@
         </form>
 
         <footer class="w3-container" style="text-align: end" ;>
-          <h4>Non hai un account? <a href="<?= '//' . $_SERVER['SERVER_NAME'] ?>/msmr/auth/signin.php">Sign-In</a> </h4>
+          <h4>Non hai un account? <a href="<?= '//' . $_SERVER['SERVER_NAME'] ?>/msmr/auth/signup.php">Sign-Up</a> </h4>
         </footer>
 
       </div>

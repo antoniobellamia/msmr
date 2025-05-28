@@ -4,7 +4,7 @@
 <html>
 
 <head>
-  <title>Sign-In</title>
+  <title>Sign-Up</title>
   <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/msmr/components/navbar.php' ?>
   <!--BODY-->
 
@@ -23,16 +23,16 @@
     <div class="w3-card-4 pure-u-md-1-2 pure-u-1-1">
 
       <header class="w3-container" style="text-align: center;">
-        <h1>Sign-In</h1>
+        <h1>Sign-Up</h1>
       </header>
 
       <div class="w3-container">
 
 
-        <form class="pure-form pure-form-aligned" method="post" action="sign-in-action.php">
+        <form class="pure-form pure-form-aligned" method="post" action="sign-up-action.php">
           <fieldset class="custom-fieldset">
 
-            <div class="pure-g custom-signin">
+            <div class="pure-g custom-signup">
               <div class="pure-u-1 pure-u-md-1-3">
                 <label for="multi-first-name">Nome</label>
                 <input id="multi-first-name" class="pure-u-23-24" type="text" placeholder="Inserisci il tuo nome..." required name="nome"/>

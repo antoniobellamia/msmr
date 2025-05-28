@@ -19,10 +19,10 @@ if ($msConn) {
     try{
         $queryRes = mysqli_query($msConn, $querySql);
 
-        if(!$queryRes) header("Location: //".$_SERVER['SERVER_NAME'] . "/msmr/auth/signin.php?err=1");
+        if(!$queryRes) header("Location: //".$_SERVER['SERVER_NAME'] . "/msmr/auth/signup.php?err=1");
         
     }catch(Exception $exc){
-        header("Location: //".$_SERVER['SERVER_NAME'] . "/msmr/auth/signin.php?err=1");
+        header("Location: //".$_SERVER['SERVER_NAME'] . "/msmr/auth/signup.php?err=1");
     }
     
 }
@@ -45,10 +45,10 @@ if ($msConn) {
             $_SESSION["id"] = $row["id"];
             header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/indirizzo-sign.php");
         } else {
-            header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/signin.php?err=1");
+            header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/signup.php?err=1");
         }
     } else {
-        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/signin.php?err=1");
+        header("Location: //" . $_SERVER['SERVER_NAME'] . "/msmr/auth/signup.php?err=1");
     }
 }
 
