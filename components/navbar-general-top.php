@@ -33,8 +33,19 @@
                         <a href="//<?= $_SERVER['SERVER_NAME'] ?>/msmr/abbonamenti/listino.php" class="pure-menu-link menu-color">Tariffe</a>
                     </li>
 
+                    <?php
+                        $oggettoMail = "Piattaforma MSMR - Richiesta di assistenza - Utente: ";
+                        if(isset($_SESSION["username"])) 
+                            $oggettoMail.=$_SESSION["username"];
+                        else 
+                            $oggettoMail.="No User";
+
+                        $oggettoMail.=" - ".date('m/d/Y h:i:s a', time());
+                        $oggettoMail = htmlentities($oggettoMail);
+                    ?>
+
                     <li class="pure-menu-item ">
-                        <a href="#" class="pure-menu-link menu-color">Assistenza</a>
+                        <a href="mailto:bellamiaantonio06@gmail.com?subject=<?=$oggettoMail?>&body=<?=$oggettoMail?>" class="pure-menu-link menu-color">Assistenza</a>
                     </li>
                 </ul>
 
