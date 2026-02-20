@@ -1,6 +1,6 @@
 # MSMR - Management System for Mail & Routing 📦🚀
 
-Benvenuti nel repository di **MSMR**, il nostro progetto per l'A.S. 2024/2025 (corso "Servizi web per le imprese"). 
+Benvenuti nel repository di **MSMR**, il nostro progetto per l'A.S. 2024/2025 (tematica "Servizi web per le imprese"). 
 
 Abbiamo sviluppato questa piattaforma web per gestire l'intero ciclo di vita delle spedizioni. L'idea di base è semplice: creare un unico hub dove mittenti, destinatari, corrieri e amministratori possano interagire e tracciare i pacchi senza impazzire.
 
@@ -15,7 +15,7 @@ Abbiamo sviluppato questa piattaforma web per gestire l'intero ciclo di vita del
 * **Clienti (Utenti):** Si registrano, scelgono un piano, spediscono e tracciano la loro roba.
 * **Corrieri:** Hanno un'area dedicata con le consegne da fare oggi nella loro zona e lo storico di quelle completate.
 * **Admin Corrieri:** I "capo-area". Monitorano i magazzini, gestiscono la flotta dei corrieri e assegnano le zone di competenza.
-* **Super Admin:** Accesso "God Mode". Vedono tutto, gestiscono tutti gli utenti e hanno l'accesso diretto al DB (tramite phpMyAdmin).
+* **Super Admin:** Accesso completo. Vedono tutto, gestiscono tutti gli utenti e hanno l'accesso diretto al DB (tramite phpMyAdmin).
 
 ## Setup in locale
 
@@ -37,7 +37,8 @@ Abbiamo sviluppato questa piattaforma web per gestire l'intero ciclo di vita del
 Se qualcosa va storto, ecco i problemi più comuni:
 * **Errore 404 (Pagina non trovata):** Probabilmente un ID spedizione o utente errato.
 * **Errore 403 (Accesso Negato):** Stai cercando di entrare in una sezione per cui non hai i permessi (es. area Admin con un account normale).
-* **Errore 500 (Internal Server Error):** Il server o il DB hanno fatto i capricci. Controlla i log.
+* **Errore 500 (Internal Server Error):** Il server o il DB hanno avuto problemi.
+Controlla i log.
 * **Password dimenticata / Account bloccato?** Contatta l'Assistenza Clienti dalla barra di navigazione.
 
 ## 📚 Documentazione Completa
