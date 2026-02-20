@@ -42,7 +42,7 @@ Se qualcosa va storto, ecco i problemi più comuni:
 
 ## 📚 Documentazione Completa
 Per capire esattamente come funzionano i flussi, le regole di assegnazione dei magazzini e vedere tutte le schermate, apri il nostro:
-👉 **[Manuale Utente MSMR (PDF)](link-al-pdf)**
+👉 **[Manuale Utente MSMR (PDF)](Documentazione/Manuale_Utente_piattaforma_MSMR.pdf)**
 
 ## 💻 Crediti e sviluppatori
 Questo software è stato sviluppato nell'ambito dei lavori dell'area di progetto dell'A.S. 2024/2025 ("Servizi web per le imprese").
